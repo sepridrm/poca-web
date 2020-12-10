@@ -15,6 +15,8 @@ class CreateInbondMaterialsTable extends Migration
     {
         Schema::create('inbond_materials', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger("id_pegawai")->nullable();
+            $table->foreign("id_pegawai")->references("id")->on("pegawais");
             $table->string('du_id',100)->nullable(false)->unique();
             $table->string('du_name',100)->nullable(false);
             $table->unsignedBigInteger("id_sub_region")->nullable();

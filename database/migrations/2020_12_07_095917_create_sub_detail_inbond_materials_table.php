@@ -20,7 +20,7 @@ class CreateSubDetailInbondMaterialsTable extends Migration
             $table->string('type',100)->nullable(false);
             $table->string('serial_number',100)->nullable(false);
             $table->text('path_foto')->nullable(false);
-            $table->string('keterangan',100)->nullable(false);
+            $table->string('keterangan',100)->nullable(true);
             $table->timestamps();
         });
     }

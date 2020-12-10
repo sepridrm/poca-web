@@ -17,6 +17,8 @@ class CreateDetailInbondMaterialsTable extends Migration
             $table->id();
             $table->unsignedBigInteger("id_inbond_material")->nullable();
             $table->foreign("id_inbond_material")->references("id")->on("inbond_materials");
+            $table->unsignedBigInteger("id_material")->nullable();
+            $table->foreign("id_material")->references("id")->on("materials");
             $table->integer('qty')->nullable(false);
             $table->timestamps();
         });
