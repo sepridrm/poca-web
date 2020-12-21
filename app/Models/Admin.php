@@ -7,7 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Admin extends Model
 {
-    public function getRole(){
-        return $this->belongsTo("App\Models\Role","id_role");
-    }
+    use HasFactory;
 }

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="en">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>SIPP-LINK</title>
+    <title>Poca Center</title>
     <link rel="icon" href="{{asset('assets/assets/images/icon.png')}}" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
     <meta name="description" content="This is an example dashboard created using build-in elements and components.">
@@ -24,21 +24,8 @@
                         <img class="mb-3" width="120" src="assets/assets/images/icon.png" alt="">
                         <div class="row justify-content-center">
                             <div class="col-md-6">
-                                <div class="widget-numbers text-white"><h5>Strategi Implementasi Pengawasan dan</h5></div>
-                                <div class="widget-numbers text-white"><h5>Pengendalian Lingkungan Hidup</h5></div>
-                                <div class="mb-4 widget-numbers text-white"><h5>Sumatera Selatan</h5></div>
-
-                                {{-- <div class="mb-4 row justify-content-center">
-                                    <div class="pr-0 col-4">
-                                        <hr style="border: 1px solid; border-radius: 1px; border-color: rgb(224,224,224)">
-                                    </div>
-                                    <div class="pr-0 pl-0 col-4" style="display: flex; align-items: center; justify-content: center">
-                                        <div class="widget-numbers text-white"><h5>SIPP-LINK</h5></div>
-                                    </div>
-                                    <div class="pl-0 col-4">
-                                        <hr style="border: 1px solid; border-radius: 1px; border-color: rgb(224,224,224)">
-                                    </div>
-                                </div> --}}
+                                <div class="widget-numbers text-white"><h5>Aplikasi Manajemen Poca Jaringan Solusi</h5></div>
+                                <div class="mb-5 widget-numbers text-white"><h5>Poca Center</h5></div>
 
                                 <div class="mb-3 input-group">
                                     <div class="input-group-prepend">
@@ -60,20 +47,19 @@
                                     </div>
                                 </div>
 
-                                <div class="mb-2 row justify-content-center">
-                                    <div class="pr-0 col-6">
+                                <div class="mb-5 row justify-content-center">
+                                    <div class="pr-0 col-10">
                                         <button class="border-1 btn-transition btn btn-outline-primary btn-block btn-lg" type="submit">Masuk</button>
                                     </div>
-                                    <div class="pr-3 col-6">
+                                    {{-- <div class="pr-3 col-6">
                                         <a href="{{ route('signup') }}"  class="border-1 btn-transition btn btn-outline-success btn-block btn-lg" type="submit">Daftar</a>
-                                    </div>
+                                    </div> --}}
                                 </div>
 
-                                <p class="mb-0 text-white">Jika lupa kata sandi ?</p>
-                                <a href="#" class="mb-4 btn btn-link">Klik disini</a>
+                                {{-- <p class="mb-0 text-white">Jika lupa kata sandi ?</p>
+                                <a href="#" class="mb-4 btn btn-link">Klik disini</a> --}}
 
-                                <p class="mb-0 text-muted">2020 | Dinas Lingkungan Hidup dan Pertanahan</p>
-                                <p class="mb-0 text-muted">Provinsi Sumatera Selatan</p>
+                                <p class="mb-0 text-muted">2021 | Poca Jaringan Solusi</p>
                             </div>
                         </div>
                     </div>

@@ -23,7 +23,7 @@
                             <div class="widget-subheading">Pengendalian Pencemaran Air</div>
                         </div>
                         <div class="widget-content-right">
-                            <div class="widget-numbers text-white"><span>{{$ippa}}</span></div>
+                            <div class="widget-numbers text-white"><span>7</span></div>
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                             <div class="widget-subheading">Pengendalian Pencemaran Udara</div>
                         </div>
                         <div class="widget-content-right">
-                            <div class="widget-numbers text-white"><span>{{$ippu}}</span></div>
+                            <div class="widget-numbers text-white"><span>98</span></div>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                             <div class="widget-subheading">Pengelolaan Limbah B3</div>
                         </div>
                         <div class="widget-content-right">
-                            <div class="widget-numbers text-white"><span>{{$iplb3}}</span></div>
+                            <div class="widget-numbers text-white"><span>8</span></div>
                         </div>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                             <div class="widget-subheading">Pengendalian Pencemaran Air</div>
                         </div>
                         <div class="widget-content-right">
-                            <div class="widget-numbers text-white"><span>{{$lppa}}</span></div>
+                            <div class="widget-numbers text-white"><span>56</span></div>
                         </div>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                             <div class="widget-subheading">Pengendalian Pencemaran Udara</div>
                         </div>
                         <div class="widget-content-right">
-                            <div class="widget-numbers text-white"><span>{{$lppu}}</span></div>
+                            <div class="widget-numbers text-white"><span>8</span></div>
                         </div>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                             <div class="widget-subheading">Pengelolaan Limbah B3</div>
                         </div>
                         <div class="widget-content-right">
-                            <div class="widget-numbers text-white"><span>{{$lplb3}}</span></div>
+                            <div class="widget-numbers text-white"><span>54</span></div>
                         </div>
                     </div>
                 </div>
@@ -115,7 +115,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                                @foreach ($izin as $index => $data)
+                                {{-- @foreach ($izin as $index => $data)
                                     <tr class="data-row">
                                         <td hidden>
                                             {{ $data->id }}
@@ -134,7 +134,7 @@
                                         </td>
                                         <td class="text-muted">{{ $data->status }}</td>
                                     </tr>
-                                @endforeach
+                                @endforeach --}}
                             </tbody>
                         </table>
                     </div>
@@ -159,7 +159,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                                @foreach ($laporan as $index => $data)
+                                {{-- @foreach ($laporan as $index => $data)
                                     <tr class="data-row">
                                         <td hidden>
                                             {{ $data->id }}
@@ -177,7 +177,7 @@
                                             @endforeach
                                         </td>
                                     </tr>
-                                @endforeach
+                                @endforeach --}}
                             </tbody>
                         </table>
                     </div>

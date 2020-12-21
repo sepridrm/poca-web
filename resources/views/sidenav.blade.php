@@ -32,9 +32,9 @@
         <div class="app-sidebar__inner">
             <ul class="vertical-nav-menu">
                 <li class="app-sidebar__heading"></li>
-                @if(isset($loginSession['user_id']))
+                @if(isset($loginSession['pegawai_id']))
                     <li>
-                        <a href="{{route('user.index')}}">
+                        <a href="{{route('pegawai.index')}}">
                             <i class="metismenu-icon pe-7s-home"></i>
                             Dashboard
                         </a>
@@ -42,68 +42,26 @@
                     <li>
                         <a href="#">
                             <i class="metismenu-icon pe-7s-menu"></i>
-                            PPA
+                            PO MART
                             <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                         </a>
                         <ul>
                             <li>
-                                <a href="{{route('user.ppa-izin')}}">
+                                <a href="#">
                                     <i class="metismenu-icon"></i>
-                                    Izin
+                                    Inbond Material
                                 </a>
                             </li>
                             <li>
-                                <a href="{{route('user.ppa-laporan')}}">
+                                <a href="#">
                                     <i class="metismenu-icon"></i>
-                                    Laporan
+                                    Outbond Material
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#">
-                            <i class="metismenu-icon pe-7s-menu"></i>
-                            PPU
-                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="{{route('user.ppu-izin')}}">
-                                    <i class="metismenu-icon"></i>
-                                    Izin
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{route('user.ppu-laporan')}}">
-                                    <i class="metismenu-icon"></i>
-                                    Laporan
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="metismenu-icon pe-7s-menu"></i>
-                            PLB3
-                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="{{route('user.plb3-izin')}}">
-                                    <i class="metismenu-icon"></i>
-                                    Izin
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{route('user.plb3-laporan')}}">
-                                    <i class="metismenu-icon"></i>
-                                    Laporan
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="{{route('user.profile')}}" >
+                        <a href="#" >
                             <i class="metismenu-icon pe-7s-user"></i>
                             Profil
                         </a>
@@ -118,74 +76,26 @@
                     <li>
                         <a href="#">
                             <i class="metismenu-icon pe-7s-menu"></i>
-                            PPA
+                            PO MART
                             <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                         </a>
                         <ul>
                             <li>
-                                <a href="{{route('admin.ppa-izin')}}">
+                                <a href="{{route('admin.inbond')}}">
                                     <i class="metismenu-icon"></i>
-                                    Izin
+                                    Inbond Material
                                 </a>
                             </li>
                             <li>
-                                <a href="{{route('admin.ppa-laporan')}}">
+                                <a href="#">
                                     <i class="metismenu-icon"></i>
-                                    Laporan
+                                    Outbond Material
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li>
                         <a href="#">
-                            <i class="metismenu-icon pe-7s-menu"></i>
-                            PPU
-                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="{{route('admin.ppu-izin')}}">
-                                    <i class="metismenu-icon"></i>
-                                    Izin
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{route('admin.ppu-laporan')}}">
-                                    <i class="metismenu-icon"></i>
-                                    Laporan
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="metismenu-icon pe-7s-menu"></i>
-                            PLB3
-                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="{{route('admin.plb3-izin')}}">
-                                    <i class="metismenu-icon"></i>
-                                    Izin
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{route('admin.plb3-laporan')}}">
-                                    <i class="metismenu-icon"></i>
-                                    Laporan
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="{{route('admin.instansi-perusahaan')}}">
-                            <i class="metismenu-icon pe-7s-culture"></i>
-                            Perusahaan/Instansi
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{route('admin.profile')}}">
                             <i class="metismenu-icon pe-7s-user"></i>
                             Profil
                         </a>

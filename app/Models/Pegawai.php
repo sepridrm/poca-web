@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pegawai extends Model
 {
-    use HasFactory;
+    public function getRole(){
+        return $this->belongsTo("App\Models\Role","id_role");
+    }
 }

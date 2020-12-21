@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\InbondMaterial;
 use App\Models\Izin;
 use App\Models\Laporan;
 use App\Models\User;
@@ -15,29 +16,18 @@ class AdminController extends Controller
 {
     public function index(Request $req){
         $loginSession = $req->session()->get("login");
-        if(isset($loginSession['user_id'])){
-            return redirect()->route('user.index');
+        if(isset($loginSession['pegawai_id'])){
+            return redirect()->route('pegawai.index');
         }
     
-        $ippa = Izin::where('jenis_izin', 'PPA')->count();
-        $ippu = Izin::where('jenis_izin', 'PPU')->count();
-        $iplb3 = Izin::where('jenis_izin', 'PLB3')->count();
-        $lppa = Laporan::where('jenis_laporan', 'PPA')->count();
-        $lppu = Laporan::where('jenis_laporan', 'PPU')->count();
-        $lplb3 = Laporan::where('jenis_laporan', 'PLB3')->count();
+        return view('contents.admin-dashboard', compact("loginSession"));
+    }
 
-        $izin = DB::table("izins")
-                ->selectRaw("izins.*, users.nama_instansi_usaha")
-                ->join("users","izins.id_user","=","users.id")
-                ->limit(5)
-            ->get();
-        $laporan = DB::table("laporans")
-            ->selectRaw("laporans.*, users.nama_instansi_usaha")
-            ->join("users","laporans.id_user","=","users.id")
-            ->limit(5)
-        ->get();
+    public function inbond(Request $req){
+        $loginSession = $req->session()->get("login");
+        $data = InbondMaterial::all();
         
-        return view('contents.admin-dashboard', compact("loginSession", "ippa", "ippu", "iplb3", "lppa", "lppu", "lplb3", "izin", "laporan"));
+        return view('contents.admin-inbond', compact("loginSession", "data"));
     }
 
     public function profile(Request $req){

@@ -4,7 +4,7 @@
             <div class="app-footer-right">
                 <ul class="nav">
                     <li class="nav-item">
-                        2020 | Dinas Lingkungan Hidup dan Pertanahan Provinsi Sumatera Selatan
+                        2020 | Poca Jaringan Solusi
                     </li>
                 </ul>
             </div>

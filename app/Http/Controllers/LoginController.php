@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
-use App\Models\User;
+use App\Models\Pegawai;
+use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -33,24 +34,29 @@ class LoginController extends Controller
 
     public function doLogin(Request $req) {
         $errMessage = "Login gagal. Email atau Password tidak valid. Silahkan coba lagi.";
-        $findUser = User::where("email_pendaftar",$req->email)->first();
+        $findUser = Pegawai::where("email",$req->email)->first();
 
         if($findUser){
-            if($findUser->status == "0"){
-                $nama = $findUser->nama_pendaftar;
-                $email = $findUser->email_pendaftar;
-                $kode = $findUser->kode_verifikasi;
-                return view('verify-email', compact("nama", "email", "kode"));
-            }
+            // if($findUser->status == "0"){
+            //     $nama = $findUser->nama_pendaftar;
+            //     $email = $findUser->email_pendaftar;
+            //     $kode = $findUser->kode_verifikasi;
+            //     return view('verify-email', compact("nama", "email", "kode"));
+            // }
             
             $isValid = Hash::check($req->password,  $findUser->password);
             if($isValid) {
+                $currentRole = $findUser->getRole;
+                $roleName = $currentRole->nama_role;
+                $roleId = $currentRole->id;
                 $req->session()->put("login",[
-                    "user_id"=>$findUser->id,
-                    "name"=>$findUser->nama_pendaftar,
-                    "email"=>$findUser->email_pendaftar,
+                    "pegawai_id"=>$findUser->id,
+                    "name"=>$findUser->nama,
+                    "email"=>$findUser->email,
+                    "id_role"=>$roleId,
+                    "nama_role"=>$roleName
                 ]);
-                return redirect()->route("user.index");
+                return redirect()->route("pegawai.index");
             }
         }else{
             $findAdmin = Admin::where("email",$req->email)->first();
@@ -62,15 +68,10 @@ class LoginController extends Controller
             $isValid = Hash::check($req->password,  $findAdmin->password);
 
             if($isValid) {
-                $currentRole = $findAdmin->getRole;
-                $roleName = $currentRole->nama_role;
-                $roleId = $currentRole->id;
                 $req->session()->put("login",[
                     "admin_id"=>$findAdmin->id,
                     "name"=>$findAdmin->nama,
-                    "email"=>$findAdmin->email,
-                    "role_id"=>$roleId,
-                    "role_name"=>$roleName
+                    "email"=>$findAdmin->email
                 ]);
                 return redirect()->route("admin.index");
             }
