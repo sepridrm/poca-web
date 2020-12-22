@@ -19,23 +19,26 @@
                 <div class="main-card card mb-4">
                     <div class="card-body"><h5 class="card-title">Data Inbond Material</h5>
                         <div class="table-responsive">
-                            <table id="table_id" class="mb-0 table table-striped table-hover">
+                            <table class="mb-0 table table-striped table-hover">
                                 <thead>
                                 <tr>
-                                    <th hidden>Id</th>
                                     <th>#</th>
+                                    <th></th>
                                     <th>DU ID</th>
                                     <th>DU Name</th>
+                                    <th>Region, Sub Region</th>
+                                    <th>Customer (Operator)</th>
+                                    <th>Pegawai</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($data as $index => $data)
                                         <tr class="data-row">
-                                            <td hidden>
-                                                {{ $data->id }}
+                                            <td>
+                                                {{ $index+1 }}
                                             </td>
                                             <td>
-                                                {{ ($index+1) }}
+                                                <a href="{{ 'inbond-detail/'.$data->id }}" class="border-0 btn-transition btn btn-outline-info">Detail</button>
                                             </td>
                                             <td>
                                                 {{ $data->du_id }}
@@ -43,14 +46,15 @@
                                             <td>
                                                 {{ $data->du_name }}
                                             </td>
-                                            {{-- <td>
-                                                @php
-                                                    $path_file = json_decode($data->path_file, true);
-                                                @endphp
-                                                @foreach ($path_file as $key=>$item)
-                                                    <a href="{{ url($item) }}">file{{($key+1)}}/ </a>
-                                                @endforeach
-                                            </td> --}}
+                                            <td>
+                                                {{ $data->nama_region }}, {{ $data->nama_sub_region }}
+                                            </td>
+                                            <td>
+                                                {{ $data->nama_customer }} ({{ $data->nama_operator }})
+                                            </td>
+                                            <td>
+                                                {{ $data->nama }}
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -69,15 +73,4 @@
             </div>
         </div>
     </div>
-@endsection
-
-@section('js')
-    <script>
-        $(document).ready( function () {
-            $('#table_id').DataTable({
-                dom: 'B<"clear">lfrtip',
-                buttons: true,
-            });
-        } );
-    </script>
 @endsection

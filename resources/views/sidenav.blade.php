@@ -47,7 +47,7 @@
                         </a>
                         <ul>
                             <li>
-                                <a href="#">
+                                <a href="{{route('pegawai.inbond')}}">
                                     <i class="metismenu-icon"></i>
                                     Inbond Material
                                 </a>

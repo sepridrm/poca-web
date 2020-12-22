@@ -24,6 +24,8 @@ Route::get('/storage-link', function () {
 Route::prefix("/")->group(function () {
     Route::middleware("authenticated")->group(function(){
         Route::get("/",[PegawaiController::class, 'index'])->name("pegawai.index");
+        Route::get("/inbond",[AdminController::class, 'inbond'])->name("pegawai.inbond");
+        Route::get("/inbond-detail/{id}",[AdminController::class, 'inbondDetail'])->name("pegawai.inbond-detail");
     });
 });
 
@@ -31,6 +33,7 @@ Route::prefix("admin")->group(function () {
     Route::middleware("authenticated")->group(function(){
         Route::get("/",[AdminController::class, 'index'])->name("admin.index");
         Route::get("/inbond",[AdminController::class, 'inbond'])->name("admin.inbond");
+        Route::get("/inbond-detail/{id}",[AdminController::class, 'inbondDetail'])->name("admin.inbond-detail");
     });
 });
 
